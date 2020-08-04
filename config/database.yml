@@ -1,22 +1,13 @@
+
+## local #######################
 # default: &default
 #   adapter: postgresql
 #   encoding: unicode
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#################################
 
-# development:
-#   <<: *default
-#   database: backend-book-club_development
 
-# test:
-#   <<: *default
-#   database: backend-book-club_test
-
-# production:
-#   <<: *default
-#   database: backend-book-club_production
-#   username: backend-book-club
-#   password: <%= ENV['BACKEND-BOOK-CLUB_DATABASE_PASSWORD'] %>
-
+## Docker #######################
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -24,7 +15,10 @@ default: &default
   username: postgres
   password: password
   pool: 5
+#################################
 
+
+## local and Docker #############
 development:
   <<: *default
   database: backend-book-club_development
@@ -38,3 +32,4 @@ production:
   database: backend-book-club_production
   username: backend-book-club
   password: <%= ENV['BACKEND-BOOK-CLUB_DATABASE_PASSWORD'] %>
+#################################
