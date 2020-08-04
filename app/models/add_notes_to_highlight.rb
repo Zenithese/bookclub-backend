@@ -1,0 +1,2 @@
+class AddNotesToHighlight < ApplicationRecord
+end

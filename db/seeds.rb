@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # User.destroy_all
-Book.destroy_all
-Highlight.destroy_all
+# Book.destroy_all
+# Highlight.destroy_all
 
 # user1 = User.create!(
 #     username: "Justin",
