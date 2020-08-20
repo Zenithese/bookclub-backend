@@ -17,7 +17,6 @@ default: &default
 #   pool: 5
 #################################
 
-
 ## local and Docker #############
 development:
   <<: *default
