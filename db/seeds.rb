@@ -2,10 +2,10 @@
 # Book.destroy_all
 # Highlight.destroy_all
 
-user1 = User.create!(
-    username: "Justin",
-    password: "password"
-)
+# user1 = User.create!(
+#     username: "Justin",
+#     password: "password"
+# )
 
 books = Book.create!([
         {
