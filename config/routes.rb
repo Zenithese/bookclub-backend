@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :highlights, only: [:create, :destroy, :update, :show, :index] do
       resources :comments, module: :highlights
     end
+    resourses :comments do
+      resource :comments, module: :comments
+    end
     resources :books, only: [:create, :destroy, :update, :show, :index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
