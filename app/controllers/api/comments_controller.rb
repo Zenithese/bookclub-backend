@@ -6,7 +6,6 @@ class Api::CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    debugger
     @comments = Comment.all
   end
 
@@ -56,13 +55,11 @@ class Api::CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      debugger
       @comment = Comment.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      debugger
       params.require(:comment).permit(:body)
     end
 end
