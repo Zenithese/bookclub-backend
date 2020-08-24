@@ -1,5 +1,5 @@
 class Comments::CommentsController < CommentsController
-    defore_action :set_commentable
+    before_action :set_commentable
 
     private
 
