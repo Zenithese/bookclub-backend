@@ -4,6 +4,7 @@ class Highlights::CommentsController < CommentsController
     private
 
     def set_commentable
+        debugger
         @commentable = Highlight.find(params[:Highlight_id])
     end
 end

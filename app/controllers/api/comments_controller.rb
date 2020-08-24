@@ -1,25 +1,18 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   # GET /comments
   # GET /comments.json
   def index
+    debugger
     @comments = Comment.all
-  end
-
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
   end
 
   # GET /comments/new
   def new
     @comment = Comment.new
-  end
-
-  # GET /comments/1/edit
-  def edit
   end
 
   # POST /comments
@@ -63,11 +56,13 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
+      debugger
       @comment = Comment.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def comment_params
+      debugger
       params.require(:comment).permit(:body)
     end
 end
