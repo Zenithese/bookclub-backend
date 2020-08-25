@@ -1,7 +1,6 @@
 class Api::CommentsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
 
   # GET /comments
   # GET /comments.json
@@ -17,8 +16,7 @@ class Api::CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = @commentable.comments.new(comment_params)
-    @comment.user_id = current_user[:id]
+    @comment = @commentable.comments.create(comment_params)
     respond_to do |format|
       if @comment.save
         render :show
@@ -60,6 +58,6 @@ class Api::CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :user_id)
     end
 end

@@ -11,6 +11,9 @@ class User < ApplicationRecord
     has_many :highlights,
         foreign_key: :user_id
 
+    has_many :comments,
+        foreign_key: :user_id
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil if user.nil?

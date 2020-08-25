@@ -1,10 +1,9 @@
-class Highlights::CommentsController < CommentsController
-    defore_action :set_commentable
+class Api::Highlights::CommentsController < Api::CommentsController
+    before_action :set_commentable
 
     private
 
     def set_commentable
-        debugger
-        @commentable = Highlight.find(params[:Highlight_id])
+        @commentable = Highlight.find(params[:highlight_id])
     end
 end
