@@ -1,6 +1,7 @@
 # User.destroy_all
-# Book.destroy_all
-# Highlight.destroy_all
+Book.destroy_all
+Highlight.destroy_all
+Comment.destroy_all
 
 # user1 = User.create!(
 #     username: "Justin",
@@ -16,9 +17,9 @@ books = Book.create!([
             user_id: 1
         },
         {
-            epub_file: "/karl-marx_friedrich-engels_the-communist-manifesto.epub",
-            image: "/cm.jpg",
-            title: "Communist Manifesto",
+            epub_file: "/leo-tolstoy_anna-karenina_constance-garnett.epub",
+            image: "/ltak-cover.jpg",
+            title: "Anna Karenina",
             location: "0",
             user_id: 1
         },
