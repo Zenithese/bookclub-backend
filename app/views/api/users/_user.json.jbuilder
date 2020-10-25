@@ -1,1 +1,1 @@
-json.extract! user, :id, :username, :font_size, :highlight_color, :theme
+json.extract! user, :id, :username, :font_size, :highlight_color, :theme, :follows
