@@ -2,7 +2,7 @@ class Api::HighlightsController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def index
-        @highlights = Highlight.all
+        @highlights = Highlight.all.includes(:comments)
     end
 
     def create
