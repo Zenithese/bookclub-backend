@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
                 font_size: current_user[:font_size],
                 highlight_color: current_user[:highlight_color],
                 theme: current_user[:theme],
-                follows: current_user[:follows]
+                follows: current_user.follows
             }
         else 
             render json: ['Error with previous session'], status: 401
