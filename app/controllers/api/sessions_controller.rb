@@ -13,16 +13,9 @@ class Api::SessionsController < ApplicationController
 
     def show
         if logged_in? && current_user
-            login(current_user)
-            render json: {
-                id: current_user[:id],
-                username: current_user[:username],
-                # local
-                font_size: current_user[:font_size],
-                highlight_color: current_user[:highlight_color],
-                theme: current_user[:theme],
-                follows: current_user.follows
-            }
+            @user = current_user
+            login(@user)
+            render "api/users/show"
         else 
             render json: ['Error with previous session'], status: 401
         end
